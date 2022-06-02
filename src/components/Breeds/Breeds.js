@@ -1,13 +1,13 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { getDogsAsync } from "../../redux/dogeSlice";
+import { getBreedsListAsync } from "../../redux/dogeSlice";
 
 export const Breeds = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(
-      getDogsAsync()
+      getBreedsListAsync()
     )
   }, [dispatch]); // eslint-disable-line react-hooks/exhaustive-deps
 

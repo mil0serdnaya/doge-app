@@ -1,12 +1,12 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 
-export const getDogsAsync = createAsyncThunk(
-  'dogeApp/getDogsAsync',
+export const getBreedsListAsync = createAsyncThunk(
+  'dogeApp/getBreedsListAsync',
   async () => {
-    const response = await fetch('https://dog.ceo/api/breeds/list/all')
+    const response = await fetch('https://dog.ceo/api/breeds/list')
     if (response.ok) {
-      const allBreeds = await response.json();
-      return { allBreeds }
+      const breedsList = await response.json();
+      return { breedsList }
     }
   }
 );
@@ -15,11 +15,11 @@ export const dogeSlice = createSlice({
   name: 'dogeApp',
   initialState: {},
   reducers: {
-    allBreeds: []
+    breedsList: []
   },
   extraReducers: {
-    [getDogsAsync.fulfilled]: (state, action) => {
-      state.allBreeds = action.payload.allBreeds.message;
+    [getBreedsListAsync.fulfilled]: (state, action) => {
+      state.breedsList = action.payload.breedsList.message;
     }
   }
 });
