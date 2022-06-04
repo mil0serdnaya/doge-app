@@ -15,7 +15,7 @@ export const dogeSlice = createSlice({
   name: 'dogeApp',
   initialState: {},
   reducers: {
-    breedsList: []
+    // breedsList: []
   },
   extraReducers: {
     [getBreedsListAsync.fulfilled]: (state, action) => {
@@ -24,5 +24,5 @@ export const dogeSlice = createSlice({
   }
 });
 
-export const { getDogs } = dogeSlice.actions;
+// export const { getDogs } = dogeSlice.actions;
 export default dogeSlice.reducer;
