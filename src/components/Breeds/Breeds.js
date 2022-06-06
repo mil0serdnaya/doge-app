@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getBreedsListAsync } from "../../redux/dogeSlice";
+import { getBreedsAsync } from "../../redux/dogeSlice";
 
 export const Breeds = () => {
   const dispatch = useDispatch();
@@ -8,7 +8,7 @@ export const Breeds = () => {
 
   useEffect(() => {
     dispatch(
-      getBreedsListAsync()
+      getBreedsAsync()
     )
   }, [dispatch]); // eslint-disable-line react-hooks/exhaustive-deps
 
